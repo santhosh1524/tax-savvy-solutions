@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 // Pages
 import HomePage from "./pages/HomePage";
@@ -22,10 +24,6 @@ import Footer from "./components/Footer";
 
 // Initialize QueryClient
 const queryClient = new QueryClient();
-
-// Add framer-motion
-import { AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
 
 const App = () => {
   const location = useLocation();
