@@ -3,15 +3,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
 
 // Pages
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
 import FaqPage from "./pages/FaqPage";
 import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
@@ -46,6 +46,7 @@ const App = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/services" element={<ServicesPage />} />
+                <Route path="/services/:slug" element={<ServiceDetailPage />} />
                 <Route path="/faq" element={<FaqPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/contact" element={<ContactPage />} />
